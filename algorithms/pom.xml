@@ -1,0 +1,43 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ru.chubaka</groupId>
+    <artifactId>alg</artifactId>
+    <packaging>pom</packaging>
+    <version>2.0</version>
+    <name>alg</name>
+
+    <modules>
+    	<module>sorters</module>
+    </modules>
+
+   <build>
+       <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.0.0</version>
+          </plugin>
+	      <plugin>
+           <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-checkstyle-plugin</artifactId>
+           <version>3.0.0</version>
+           <executions>
+             <execution>
+               <id>validate</id>
+               <phase>validate</phase>
+               <configuration>
+                  <configLocation>checkstyle.xml</configLocation>
+                  <encoding>UTF-8</encoding>
+                  <consoleOutput>true</consoleOutput>
+                  <failsOnError>true</failsOnError>
+                  <linkXRef>false</linkXRef>
+               </configuration>
+              <goals>
+                  <goal>check</goal>
+              </goals>
+             </execution>
+           </executions>
+          </plugin>
+      </plugins>
+   </build>   
+</project>
