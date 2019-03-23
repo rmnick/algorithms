@@ -11,7 +11,7 @@ import ru.chubaka.Service;
  */
 public class BubbleSort { 
     
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         BubbleSort sorter = new BubbleSort();
         int[] oddArr = Service.getArr(21);
         int[] evenArr = Service.getArr(20);
