@@ -12,15 +12,20 @@ import ru.chubaka.Service;
 public class BubbleSort { 
     
     public static void main(String[] args) {
+        long start;
+        long end;
         BubbleSort sorter = new BubbleSort();
-        int[] oddArr = Service.getArr(21);
+        int[] oddArr = Service.getArr(501);
         int[] evenArr = Service.getArr(20);
         Service.showArr(oddArr);
         Service.showArr(evenArr);
+        start = System.currentTimeMillis();
         oddArr = sorter.sort(oddArr);
-//        evenArr = sorter.sort(evenArr);
+        end = System.currentTimeMillis();
+        evenArr = sorter.sort(evenArr);
         Service.showArr(oddArr);
-//        Service.showArr(evenArr);
+        Service.showArr(evenArr);
+        System.out.println(end - start);
     }
     
     public int[] sort(final int[] arr) {
