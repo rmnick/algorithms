@@ -3,16 +3,18 @@ package ru.chubaka.bubble;
 
 import java.util.Arrays;
 import java.util.stream.*;
+
+import ru.chubaka.ISort;
 import ru.chubaka.Service;
 
 /**
  * 
  * @author nick rodionov
  */
-public class BubbleSort { 
+public class BubbleSort implements ISort {
     
     public static void main(String[] args) {
-        BubbleSort sorter = new BubbleSort();
+        ISort sorter = new BubbleSort();
         int[] oddArr = Service.getArr(21);
         int[] evenArr = Service.getArr(20);
         Service.showArr(oddArr);
@@ -22,7 +24,8 @@ public class BubbleSort {
         Service.showArr(oddArr);
 //        Service.showArr(evenArr);
     }
-    
+
+    @Override
     public int[] sort(final int[] arr) {
 //        int[] result = new int[arr.length];
 //        int[] result = Arrays.stream(arr).toArray(int[] :: new);
