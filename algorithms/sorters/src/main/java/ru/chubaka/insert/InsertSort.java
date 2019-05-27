@@ -30,7 +30,7 @@ public class InsertSort implements ISort {
             in = out;
             while (in > 0 && arr[in - 1] >= temp) {
                 arr[in] = arr[in - 1];
-                --in;
+                in--;
             }
             arr[in] = temp;
         }
