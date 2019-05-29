@@ -7,14 +7,18 @@ import ru.chubaka.Service;
 public class SelectSort implements ISort {
 	public static void main(String[] args) {
 		ISort sorter = new SelectSort();
-		int[] oddArr = Service.getArr(21);
-		int[] evenArr = Service.getArr(20);
-		Service.showArr(oddArr);
-		Service.showArr(evenArr);
-		oddArr = sorter.sort(oddArr);
-		Service.showArr(oddArr);
-		evenArr = sorter.sort(evenArr);
-		Service.showArr(evenArr);
+		int[] oddArr = Service.getArr(111111);
+//		int[] evenArr = Service.getArr(20);
+//		Service.showArr(oddArr);
+//		Service.showArr(evenArr);
+//		oddArr = sorter.sort(oddArr);
+//		Service.showArr(oddArr);
+//		evenArr = sorter.sort(evenArr);
+//		Service.showArr(evenArr);
+		long start = System.currentTimeMillis();
+		int[] arr = sorter.sort(oddArr);
+		long end = System.currentTimeMillis();
+		System.out.println(end - start);
 	}
 
 	@Override
