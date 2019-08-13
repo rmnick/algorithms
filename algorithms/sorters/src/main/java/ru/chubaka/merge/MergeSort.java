@@ -31,7 +31,7 @@ public class MergeSort implements ISort {
         if (arr.length < 2) {
             return arr;
         } else {
-            int[] buffOne = sort(Arrays.copyOfRange(arr, 0, arr.length /2 ));
+            int[] buffOne = sort(Arrays.copyOfRange(arr, 0, arr.length / 2));
             int[] buffTwo = sort(Arrays.copyOfRange(arr, arr.length / 2, arr.length));
             return merge(buffOne, buffTwo);
         }
