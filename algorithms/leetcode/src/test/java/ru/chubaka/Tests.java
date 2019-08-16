@@ -35,4 +35,18 @@ public class Tests {
         assertThat(lcp.longestCommonPrefix(new String[]{"abca","aba","aaab"}), is("a"));
     }
 
+    @Test
+    public void validParenthesesTest() {
+        ValidParentheses vp = new ValidParentheses();
+        assertThat(vp.isValid("({[{}()]}())"), is(true));
+        assertThat(vp.isValid("{(()}"), is(false));
+        assertThat(vp.isValid(""), is(true));
+    }
+
+    @Test
+    public void removeDuplicateFromSortedIntArrayTest() {
+        RemoveDuplicates rd = new RemoveDuplicates();
+        assertThat(rd.removeDuplicates(new int[]{0, 1, 1, 2, 3, 4, 5, 5}), is(6));
+    }
+
 }

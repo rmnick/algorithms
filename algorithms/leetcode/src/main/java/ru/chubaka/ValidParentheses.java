@@ -2,6 +2,7 @@ package ru.chubaka;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Stack;
 
 /**
  * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
@@ -41,45 +42,25 @@ import java.util.Map;
 
 public class ValidParentheses {
     public static Map<Character, Character> map = new HashMap();
-    static {
+
+    public ValidParentheses() {
         map.put('{', '}');
         map.put('[', ']');
         map.put('(', ')');
     }
 
-    public static boolean isValid(String s) {
-        boolean result = true;
-        boolean flag = false;
+    public boolean isValid(String s) {
         char[] arr = s.toCharArray();
-        if (arr.length % 2 != 0 || arr.length == 1) {
-            return false;
-        }
-
+        Stack<Character> st = new Stack();
         for (int i = 0; i < arr.length; i++) {
-            if (map.get(arr[i]) == null) {
-                return false;
-            }
-            if (map.get(arr[i]) == arr[i + 1]) {
-                i++;
-            } else {
-                for (int j = i + 3; j < arr.length; j += 2) {
-                    if (map.get(arr[i]) == arr[j]) {
-                        flag = true;
-                        break;
-                    }
-                }
-                if (!flag) {
-                    result = false;
-                    break;
+            if (map.containsKey(arr[i])) {
+                st.push(map.get(arr[i]));
+            } else if (map.containsValue(arr[i])) {
+                if (st.isEmpty() || st.pop() != arr[i]) {
+                    return false;
                 }
             }
         }
-        return result;
-    }
-
-
-
-    public static void main(String[] args) {
-        System.out.println(isValid("(([]){})"));
+        return st.isEmpty();
     }
 }
