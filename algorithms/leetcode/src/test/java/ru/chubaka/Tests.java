@@ -49,4 +49,10 @@ public class Tests {
         assertThat(rd.removeDuplicates(new int[]{0, 1, 1, 2, 3, 4, 5, 5}), is(6));
     }
 
+    @Test
+    public void removeElementTest() {
+        RemoveElement re = new RemoveElement();
+        assertThat(re.removeElement(new int[]{0, 1, 1, 2, 3, 1, 4, 5, 5}, 1), is(6));
+    }
+
 }
